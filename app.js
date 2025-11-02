@@ -14,7 +14,7 @@ const server = createServer(app);
 const io = new Server(server, {
   path: "/socket/",
   cors: {
-    origin: "https://unnourished-resonantly-dulcie.ngrok-free.dev",
+    origin: process.env.CLIENT_URL,
     methods: ["GET", "POST"],
     credentials: true,
   },
