@@ -8,8 +8,12 @@ import { checkAuth } from "./middlewares/auth.middleware.js";
 import roomRoutes from "./routes/room.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import { initializeSocket } from "./socket/index.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
+
 const server = createServer(app);
 const io = new Server(server, {
   path: "/socket/",
